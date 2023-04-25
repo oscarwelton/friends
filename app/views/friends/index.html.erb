@@ -1,0 +1,21 @@
+
+<div id="friends">
+  <table class="table table-striped shadow">
+    <thead class="thead-dark">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Socials</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friends.each do |friend| %>
+        <%= render friend %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "New friend", new_friend_path, class:'btn btn-secondary mt-3' %>
+</div>
