@@ -30,13 +30,13 @@
     <%= form.text_field :phone, class: "form-control" %>
   </div>
 
-  <div class="form-floating mb-3">
+  <div class="form-floating mb-4">
     <b><%= form.label :socials %></b>
     <%= form.text_field :socials, class: "form-control" %>
   </div>
 
-  <div class="mb-3 d-flex justify-content-between">
-    <%= link_to "Back",  request.referrer || root_path, class:"btn btn-secondary" %>
-    <%= form.submit "Save", class: "btn btn-success" %>
+
+  <div class="mb-5">
+    <%= form.submit "Save", class: "btn btn-success float-right" %>
   </div>
 <% end %>

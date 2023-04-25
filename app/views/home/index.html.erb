@@ -1,4 +1,33 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-
-<h3>hello world</h3>
+<% if user_signed_in? %>
+  <div id="friends">
+    <div class="d-flex justify-content-between mb-4 mt-3">
+      <h1>Your Friends</h1>
+      <%= link_to "Add Friend", new_friend_path, class:'btn btn-primary mt-3' %>
+    </div>
+    <table class="table table-striped shadow">
+      <thead class="thead-dark">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Socials</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @friends.nil? %>
+          <tr>
+            <td> Add a new friend!</td>
+          </tr>
+        <% else %>
+          <% @friends.each do |friend| %>
+            <%= render friend %>
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  <% else %>
+    <h1>HELLO WORLD</h1>
+  <% end %>

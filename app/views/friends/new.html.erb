@@ -1,4 +1,9 @@
-<div class="w-50 m-auto shadow p-5">
-  <h1 class="mb-5">New friend</h1>
+<div class="w-50 ml-auto mr-auto mt-5 shadow p-5">
+  <div class="mb-3 d-flex justify-content-between">
+    <h1 class="mb-5">Add Friend</h1>
+    <div>
+      <%= link_to "Back",  request.referrer || root_path, class:"btn btn-secondary" %>
+    </div>
+  </div>
   <%= render "form", friend: @friend %>
 </div>
